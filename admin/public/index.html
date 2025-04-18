@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/src/assets/logo.jpg" type="image/jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperGear Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add custom styles -->
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      h2 {
+        font-size: 25px;
+        text-decoration: underline;
+      }
+      p {
+        font-size: 16px;
+        color: #333;
+      }
+      .routes p {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      a {
+        display: block;
+        font-size: 16px;
+        color: #000000;
+        text-decoration: none;
+        margin-bottom: 5px;
+        text-decoration: underline;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: #0265cf;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>SuperGear Admin</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item active" data-page="dashboard">
+                    <span class="material-icons">dashboard</span>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item" data-page="orders">
+                    <span class="material-icons">shopping_cart</span>
+                    <span>Orders</span>
+                </li>
+                <li class="nav-item" data-page="products">
+                    <span class="material-icons">inventory_2</span>
+                    <span>Products</span>
+                </li>
+                <li class="nav-item" data-page="users">
+                    <span class="material-icons">people</span>
+                    <span>Users</span>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <header>
+                <div class="search-bar">
+                    <span class="material-icons">search</span>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="user-info">
+                    <span class="material-icons">notifications</span>
+                    <div class="admin-profile">
+                        <span class="material-icons">account_circle</span>
+                        <span>Admin</span>
+                    </div>
+                </div>
+            </header>
+            <div id="dashboard-content" class="page active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Orders</h3>
+                        <p class="stat-number" id="total-orders">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Revenue</h3>
+                        <p class="stat-number" id="total-revenue">$0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Users</h3>
+                        <p class="stat-number" id="active-users">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Products</h3>
+                        <p class="stat-number" id="total-products">0</p>
+                    </div>
+                </div>
+                <div class="charts-container">
+                    <div class="chart-card">
+                        <h3>Recent Orders</h3>
+                        <table id="recent-orders">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="orders-content" class="page">
+                <h2>Orders Management</h2>
+                <div class="orders-list">
+                    <table id="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="products-content" class="page">
+                <h2>Products Management</h2>
+                <button id="add-product" class="btn-primary">Add New Product</button>
+                <div class="products-grid" id="products-grid"></div>
+            </div>
+            <div id="users-content" class="page">
+                <h2>Users Management</h2>
+                <div class="users-list">
+                    <table id="users-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Joined Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
