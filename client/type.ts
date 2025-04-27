@@ -17,6 +17,7 @@ export interface CategoryProps {
 }
 
 export interface ProductProps {
+  price?: number;
   options?: string[];
   _id: number;
   _base: string;
@@ -47,6 +48,8 @@ export interface BlogProps {
 }
 
 export interface AddressType {
+  fullName?: string;
+  phoneNumber?: string;
   addressLine1: string;
   addressLine2?: string;
   city: string;

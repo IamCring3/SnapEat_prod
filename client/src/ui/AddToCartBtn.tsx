@@ -9,7 +9,7 @@ import PriceTag from "./PriceTag";
 
 const AddToCartBtn = ({
   className,
-  title,
+
   product,
   showPrice = false,
 }: {
@@ -38,10 +38,10 @@ const AddToCartBtn = ({
   const handleDeleteProduct = () => {
     if (existingProduct) {
       if (existingProduct?.quantity > 1) {
-        decreaseQuantity(existingProduct?._id);
+        decreaseQuantity(String(existingProduct?._id));
         toast.success(`${product?.name.substring(0, 10)} decreased successfully`);
       } else {
-        removeFromCart(existingProduct?._id);
+        removeFromCart(String(existingProduct?._id));
         toast.success(`${product?.name.substring(0, 10)} removed from cart`);
       }
     }

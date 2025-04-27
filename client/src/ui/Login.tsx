@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
 
 // Regular users should only use phone authentication
 // This component redirects to phone authentication

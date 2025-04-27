@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { config } from "../../config";
 import { getData } from "../lib";
 import Loading from "../ui/Loading";
 import Container from "../ui/Container";
 import CategoryFilters from "../ui/CategoryFilters";
+
 import ProductCard from "../ui/ProductCard";
 import { ProductProps } from "../../type";
 

@@ -1,8 +1,8 @@
 import {
   HiBookOpen,
-  HiBookmarkSquare,
+
   HiMiniQueueList,
-  HiRss,
+
 } from "react-icons/hi2";
 import { LuChevronRight } from "react-icons/lu";
 import { useLocation } from "react-router-dom";

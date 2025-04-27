@@ -17,7 +17,7 @@ const Registration = () => {
     url: "",
   });
   // Only phone authentication is allowed for regular users
-  const [authMethod, setAuthMethod] = useState("phone");
+  const [authMethod] = useState("phone");
 
   const handleAvatar = (e: any) => {
     if (e.target.files[0]) {
@@ -74,7 +74,7 @@ const Registration = () => {
       {login ? (
         <Login setLogin={setLogin} />
       ) : authMethod === "phone" ? (
-        <PhoneAuthProduction setLogin={setLogin} />
+        <PhoneAuthProduction />
       ) : (
         <div className="bg-gray-950 rounded-lg">
           <form

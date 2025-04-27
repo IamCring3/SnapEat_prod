@@ -18,7 +18,7 @@ declare global {
   }
 }
 
-const PhoneAuthProduction = ({ setLogin }: { setLogin: any }) => {
+const PhoneAuthProduction = () => {
   const navigate = useNavigate();
   const { getUserInfo } = store();
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -124,7 +124,7 @@ const PhoneAuthProduction = ({ setLogin }: { setLogin: any }) => {
           'auth/argument-error': "Invalid argument provided to Firebase. Please check your phone number format."
         };
 
-        errorMessage = errorMessages[error.code] || `Error: ${error.message || error.code}`;
+        errorMessage = errorMessages[String(error.code) as keyof typeof errorMessages] || `Error: ${error.message || error.code}`;
       } else if (error.message) {
         errorMessage = error.message;
       }

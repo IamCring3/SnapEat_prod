@@ -10,7 +10,7 @@ import ShippingAddressForm, { ShippingAddressType } from "../ui/ShippingAddressF
 
 const Cart = () => {
   const [totalAmt, setTotalAmt] = useState({ regular: 0, discounted: 0 });
-  const { cartProduct, currentUser } = store();
+  const { cartProduct } = store();
   const [shippingAddress, setShippingAddress] = useState<ShippingAddressType | null>(null);
   const [showAddressForm, setShowAddressForm] = useState(true);
 

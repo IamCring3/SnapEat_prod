@@ -7,14 +7,14 @@ import {
   Transition,
 } from "@headlessui/react";
 import { FaChevronDown } from "react-icons/fa";
-import { FiShoppingBag, FiStar, FiUser } from "react-icons/fi";
+import { FiShoppingBag, FiUser } from "react-icons/fi";
 import { IoClose, IoSearchOutline } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 import { logo } from "../assets";
 import Container from "./Container";
 import { config } from "../../config";
 import { getData } from "../lib";
-import { CategoryProps, ProductProps } from "../../type";
+import { ProductProps } from "../../type";
 import ProductCard from "./ProductCard";
 import { store } from "../lib/store";
 import { categories } from "../config/categories";
@@ -32,7 +32,7 @@ const Header = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
-  const { cartProduct, favoriteProduct, currentUser } = store();
+  const { cartProduct, currentUser } = store();
   const location = useLocation();
 
   useEffect(() => {

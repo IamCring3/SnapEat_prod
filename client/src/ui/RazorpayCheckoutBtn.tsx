@@ -45,7 +45,7 @@ const RazorpayCheckoutBtn = ({ products, shippingAddress }: RazorpayCheckoutBtnP
 
       // Calculate total amount (including shipping and tax)
       const subtotal = products.reduce(
-        (sum, item) => sum + (item.discountedPrice || item.price) * (item.quantity || 1),
+        (sum, item) => sum + ((item?.discountedPrice ?? item?.price ?? 0) * (item?.quantity ?? 1)), 
         0
       );
       const shippingCost = 25; // Same as in Cart.tsx

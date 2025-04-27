@@ -16,7 +16,7 @@ import Loading from "../ui/Loading";
 
 const Orders = () => {
   const { currentUser } = store();
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     const getData = async () => {
@@ -30,7 +30,7 @@ const Orders = () => {
         }
 
         console.log("Fetching orders for user ID:", currentUser.id);
-        let allOrders = [];
+        let allOrders: any[] = [];
 
         // 1. Check the regular orders collection first
         const docRef = doc(db, "orders", currentUser.id);
@@ -171,7 +171,7 @@ const Orders = () => {
                               {order?.shippingAddress && (
                                 <div className="mt-2">
                                   <p className="text-gray-600 font-medium">Shipping Address:</p>
-                                  <p className="text-sm text-gray-700">{order.shippingAddress.fullName}</p>
+                                  <p className="text-sm text-gray-700">{order.shippingAddress?.fullName ?? ''}</p>
                                   <p className="text-sm text-gray-700">{order.shippingAddress.addressLine1}</p>
                                   {order.shippingAddress.addressLine2 && (
                                     <p className="text-sm text-gray-700">{order.shippingAddress.addressLine2}</p>
@@ -180,7 +180,7 @@ const Orders = () => {
                                     {order.shippingAddress.city}, {order.shippingAddress.state} {order.shippingAddress.postalCode}
                                   </p>
                                   <p className="text-sm text-gray-700">{order.shippingAddress.country}</p>
-                                  <p className="text-sm text-gray-700">{order.shippingAddress.phoneNumber}</p>
+                                  <p className="text-sm text-gray-700">{order.shippingAddress?.phoneNumber ?? ''}</p>
                                 </div>
                               )}
                             </div>
