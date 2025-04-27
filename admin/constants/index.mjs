@@ -175,7 +175,7 @@ export const products = [
   {
     _id: 2101,
     name: "Lizol Disinfectant Surface Cleaner - Floral",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/Fq3LHjk7/Lizol-Disinfectant-Surface-Cleaner-Floral.jpg"],
     description: "Lizol Disinfectant Surface Cleaner - Floral.",
     regularPrice: 116,
     discountedPrice: 116,
@@ -193,7 +193,7 @@ export const products = [
   {
     _id: 2102,
     name: "Harpic",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/27PkMcLL/Harpic.jpg"],
     description: "Harpic toilet cleaner.",
     regularPrice: 44,
     discountedPrice: 44,
@@ -211,7 +211,7 @@ export const products = [
   {
     _id: 2103,
     name: "Robin - Fabric Whiteness",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/kVJJk5wB/Robin-Fabric-Whiteness.jpg"],
     description: "Robin - Fabric Whiteness for laundry.",
     regularPrice: 39,
     discountedPrice: 39,
@@ -229,7 +229,7 @@ export const products = [
   {
     _id: 2104,
     name: "Patanjali Super Dishwash Bar",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/PGgV1zK3/Patanjali-Super-Dishwash-Bar.webp"],
     description: "Patanjali Super Dishwash Bar for utensils.",
     regularPrice: 10,
     discountedPrice: 10,
@@ -247,7 +247,7 @@ export const products = [
   {
     _id: 2105,
     name: "Odopic Dishwash Bar",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/WvSt4cjj/Odopic-Dishwash-Bar.webp"],
     description: "Odopic Dishwash Bar for utensils.",
     regularPrice: 60,
     discountedPrice: 60,
@@ -265,7 +265,7 @@ export const products = [
   {
     _id: 2106,
     name: "Tide Washing Powder - Jasmine & Rose",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/RTygC3B4/Tide-Washing-Powder-Jasmine-Rose.webp"],
     description: "Tide Washing Powder - Jasmine & Rose fragrance.",
     regularPrice: 10,
     discountedPrice: 10,
@@ -284,7 +284,7 @@ export const products = [
   {
     _id: 2107,
     name: "Dettol Liquid Hand Wash",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/pjZ62sjw/Dettol-Liquid-Hand-Wash.webp"],
     description: "Dettol Liquid Hand Wash for hygiene.",
     regularPrice: 99,
     discountedPrice: 99,
@@ -302,7 +302,7 @@ export const products = [
   {
     _id: 2108,
     name: "Dettol Sensitive Liquid Hand Wash Refiller",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/1GtCkqR7/Dettol-Sensitive-Liquid-Hand-Wash-Refiller.webp"],
     description: "Dettol Sensitive Liquid Hand Wash Refiller.",
     regularPrice: 50,
     discountedPrice: 50,
@@ -320,7 +320,7 @@ export const products = [
   {
     _id: 2109,
     name: "Colin Glass Cleaner",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/JwPy559f/Colin-Glass-Cleaner.webp"],
     description: "Colin Glass Cleaner for shiny surfaces.",
     regularPrice: 109,
     discountedPrice: 109,
@@ -338,7 +338,7 @@ export const products = [
   {
     _id: 2110,
     name: "Vivel Soap - Lime and Aloe Vera",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/TDTR8X2c/Vivel-Soap-Lime-and-Aloe-Vera.jpg"],
     description: "Vivel Soap with Lime and Aloe Vera.",
     regularPrice: 40,
     discountedPrice: 40,
@@ -356,7 +356,7 @@ export const products = [
   {
     _id: 2111,
     name: "Vivel Soap - Lotus Oil + Aloe Vera",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/zTwc9Ym2/Vivel-Soap-Lotus-Oil-Aloe-Vera.webp"],
     description: "Vivel Soap with Lotus Oil and Aloe Vera.",
     regularPrice: 40,
     discountedPrice: 40,
@@ -374,7 +374,7 @@ export const products = [
   {
     _id: 2112,
     name: "Lux Soap - Radiant Glow Rose",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/BVrZ2cG3/Lux-Soap-Radiant-Glow-Rose.jpg"],
     description: "Lux Soap with Radiant Glow Rose fragrance.",
     regularPrice: 100,
     discountedPrice: 100,
@@ -428,7 +428,7 @@ export const products = [
   {
     _id: 2115,
     name: "Godrej Cinthol Soap - Intense Deo Fragrance",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/6Rg3xLrF/Godrej-Cinthol-Soap-Intense-Deo-Fragrance.webp"],
     description: "Godrej Cinthol Soap with Intense Deo Fragrance.",
     regularPrice: 10,
     discountedPrice: 10,
@@ -464,7 +464,7 @@ export const products = [
   {
     _id: 2117,
     name: "Pears Soap - Pure and Gentle",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/yTxk2g5/Pears-Soap-Pure-and-Gentle.webp"],
     description: "Pears Soap - Pure and Gentle.",
     regularPrice: 54,
     discountedPrice: 54,
@@ -482,7 +482,7 @@ export const products = [
   {
     _id: 2118,
     name: "Lifebuoy Soap - Expert Defence",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/wZh5gP6H/Lifebuoy-Soap-Expert-Defence.webp"],
     description: "Lifebuoy Soap - Expert Defence.",
     regularPrice: 112,
     discountedPrice: 112,
@@ -518,7 +518,7 @@ export const products = [
   {
     _id: 2120,
     name: "Streax Hair Serum - Walnut Oil",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/KcKRQ704/Streax-Hair-Serum-Walnut-Oil.webp"],
     description: "Streax Hair Serum with Walnut Oil.",
     regularPrice: 130,
     discountedPrice: 130,
@@ -536,7 +536,7 @@ export const products = [
   {
     _id: 2121,
     name: "Livon Hair Serum - Anti-Frizz",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/k2kcZTDq/Livon-Hair-Serum-Anti-Frizz.jpg"],
     description: "Livon Hair Serum - Anti-Frizz.",
     regularPrice: 279,
     discountedPrice: 279,
@@ -554,7 +554,7 @@ export const products = [
   {
     _id: 2122,
     name: "Pantene Conditioner - Hairfall Control",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/nN77K6k8/Pantene-Conditioner-Hairfall-Control.webp"],
     description: "Pantene Conditioner for Hairfall Control.",
     regularPrice: 229,
     discountedPrice: 229,
@@ -590,7 +590,7 @@ export const products = [
   {
     _id: 2124,
     name: "Dove Shampoo - Anti Dandruff Solutions",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/ks9P5pCZ/Dove-Shampoo-Anti-Dandruff-Solutions.jpg"],
     description: "Dove Shampoo - Anti Dandruff Solutions.",
     regularPrice: 205,
     discountedPrice: 205,
@@ -608,7 +608,7 @@ export const products = [
   {
     _id: 2125,
     name: "Dove Shampoo - Hair Fall Rescue",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/WNpPWbNd/Dove-Shampoo-Hair-Fall-Rescue.jpg"],
     description: "Dove Shampoo - Hair Fall Rescue.",
     regularPrice: 205,
     discountedPrice: 205,
@@ -626,7 +626,7 @@ export const products = [
   {
     _id: 2126,
     name: "Dove Shampoo - Daily Shine",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/LhCJvWYm/Dove-Shampoo-Daily-Shine.jpg"],
     description: "Dove Shampoo - Daily Shine.",
     regularPrice: 205,
     discountedPrice: 205,
@@ -644,7 +644,7 @@ export const products = [
   {
     _id: 2127,
     name: "Head & Shoulders Shampoo - Smooth & Silky",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/gLwpkSQn/Head-Shoulders-Shampoo-Smooth-Silky.jpg"],
     description: "Head & Shoulders Shampoo - Smooth & Silky.",
     regularPrice: 205,
     discountedPrice: 205,
@@ -663,7 +663,7 @@ export const products = [
   {
     _id: 2128,
     name: "Head & Shoulders Shampoo - Silky Black",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/wZh5gP6H/Lifebuoy-Soap-Expert-Defence.webp"],
     description: "Head & Shoulders Shampoo - Silky Black.",
     regularPrice: 84,
     discountedPrice: 84,
@@ -681,7 +681,7 @@ export const products = [
   {
     _id: 2129,
     name: "Head & Shoulders Shampoo - Neem",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/fdmRGspb/Head-Shoulders-Shampoo-Neem.jpg"],
     description: "Head & Shoulders Shampoo - Neem.",
     regularPrice: 105,
     discountedPrice: 105,
@@ -699,7 +699,7 @@ export const products = [
   {
     _id: 2130,
     name: "Head & Shoulders Shampoo - Anti-Hairfall",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/7dhbyjQH/Head-Shoulders-Shampoo-Anti-Hairfall.jpg"],
     description: "Head & Shoulders Shampoo - Anti-Hairfall.",
     regularPrice: 84,
     discountedPrice: 84,
@@ -717,7 +717,7 @@ export const products = [
   {
     _id: 2131,
     name: "Sunsilk Shampoo - Stunning Black Shine",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://i.ibb.co/tMFVqC7w/Sunsilk-Shampoo-Stunning-Black-Shine.jpg"],
     description: "Sunsilk Shampoo - Stunning Black Shine.",
     regularPrice: 164,
     discountedPrice: 164,
@@ -735,7 +735,7 @@ export const products = [
   {
     _id: 2132,
     name: "Tresemme Shampoo - Lamellar Gloss",
-    images:"https://i.ibb.co/vycQnkd/Tresemme-Shampoo-Lamellar-Gloss.webp",
+    images:["https://i.ibb.co/vycQnkd/Tresemme-Shampoo-Lamellar-Gloss.webp"],
     description: "Tresemme Shampoo Lamellar Gloss for shiny, smooth hair.",
     regularPrice: 220,
     discountedPrice: 199,
