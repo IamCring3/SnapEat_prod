@@ -157,7 +157,7 @@ export const products = [
   {
     _id: 2100,
     name: "Lizol - Citrus",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://griepit.in/wp-content/uploads/2025/03/61W8NHxqS8L._SX679_.jpg"],
     description: "Lizol - Citrus cleaning liquid.",
     regularPrice: 116,
     discountedPrice: 116,
@@ -392,7 +392,7 @@ export const products = [
   {
     _id: 2113,
     name: "Dettol Soap - Original",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://griepit.in/wp-content/uploads/2025/03/DettolOriginalSoap.jpg"],
     description: "Dettol Soap - Original for germ protection.",
     regularPrice: 10,
     discountedPrice: 10,
@@ -410,7 +410,7 @@ export const products = [
   {
     _id: 2114,
     name: "Dove Soap - Cream Bar",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://griepit.in/wp-content/uploads/2025/03/71aBGCWpnuL._AC_SL1500_.jpg"],
     description: "Dove Soap - Cream Bar for smooth skin.",
     regularPrice: 61,
     discountedPrice: 61,
@@ -446,7 +446,7 @@ export const products = [
   {
     _id: 2116,
     name: "Godrej Cinthol Soap - Cool",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://griepit.in/wp-content/uploads/2025/03/1-100-cool-soap-cinthol-original-imaffnk4h9gjhrvz.jpeg"],
     description: "Godrej Cinthol Soap - Cool.",
     regularPrice: 10,
     discountedPrice: 10,
@@ -500,7 +500,7 @@ export const products = [
   {
     _id: 2119,
     name: "Dabur Amla Hair Oil",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://griepit.in/wp-content/uploads/2025/04/Dabur-Amla-Hair-Oil.jpg"],
     description: "Dabur Amla Hair Oil for strong hair.",
     regularPrice: 20,
     discountedPrice: 20,
@@ -572,7 +572,7 @@ export const products = [
   {
     _id: 2123,
     name: "Pantene Shampoo - Silky Smooth",
-    images: ["https://via.placeholder.com/150"],
+    images: ["https://griepit.in/wp-content/uploads/2025/03/41dZ9dF-LlL.jpg"],
     description: "Pantene Shampoo for silky smooth hair.",
     regularPrice: 205,
     discountedPrice: 205,
