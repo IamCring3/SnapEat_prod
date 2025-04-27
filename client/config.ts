@@ -6,7 +6,7 @@ const checkConfig = (server: string): Config | {} => {
   switch (server) {
     case "production":
       config = {
-        baseUrl: "https://snap-eat-prod-ucu7.vercel.app",
+        baseUrl: "https://snap-eat-prod.vercel.app",
       };
       break;
     case "local":
