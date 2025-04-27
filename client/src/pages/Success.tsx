@@ -52,8 +52,8 @@ const Success = () => {
           const docSnap = await getDoc(orderRef);
 
           // Determine payment method and ID
-          const paymentMethod = sessionId ? "stripe" : "razorpay";
-          const finalPaymentId = sessionId || paymentId;
+          let paymentMethod = sessionId ? "stripe" : "razorpay";
+          let finalPaymentId = sessionId || paymentId;
 
           console.log("Payment method:", paymentMethod);
           console.log("Payment ID:", finalPaymentId);
@@ -71,15 +71,15 @@ const Success = () => {
             console.error("Error retrieving shipping address:", error);
           }
 
-          const orderData = {
+          let orderData = {
             userEmail: currentUser?.email || null,
             phoneNumber: currentUser?.phoneNumber || null,
             userName: `${currentUser?.firstName || ''} ${currentUser?.lastName || ''}`.trim(),
-            paymentId: finalPaymentId,
-            orderItems: cartProduct,
-            paymentMethod: paymentMethod,
-            userId: currentUser.id,
-            orderDate: new Date().toISOString(),
+            
+            
+            
+            
+            
             totalAmount: cartProduct.reduce((sum, item) => sum + ((item.discountedPrice || item.regularPrice) * item.quantity), 0),
             shippingAddress: shippingAddress,
             shippingCost: 25,
@@ -115,8 +115,8 @@ const Success = () => {
           }
 
           console.log("Order saved successfully with data:", {
-            userId: currentUser.id,
-            paymentId: finalPaymentId,
+            
+            
             items: cartProduct.length,
             total: orderData.totalAmount
           });
@@ -135,18 +135,31 @@ const Success = () => {
             try {
               // Try a different approach - create a temporary document with a random ID
               const tempOrdersCollection = collection(db, "temp_orders");
-              await addDoc(tempOrdersCollection, {
-                userId: currentUser.id,
-                paymentId: finalPaymentId,
-                orderItems: cartProduct,
-                paymentMethod: paymentMethod,
-                orderDate: new Date().toISOString(),
-                totalAmount: orderData?.totalAmount ?? 0,
-                shippingAddress: orderData?.shippingAddress ?? {},
-                userEmail: currentUser?.email || null,
-                phoneNumber: currentUser?.phoneNumber || null,
-                userName: `${currentUser?.firstName || ''} ${currentUser?.lastName || ''}`.trim(),
-              });
+              // Ensure shippingAddress is defined in this scope
+              let fallbackShippingAddress = null;
+              try {
+                const savedAddress = localStorage.getItem('lastShippingAddress');
+                if (savedAddress) {
+                  fallbackShippingAddress = JSON.parse(savedAddress);
+                }
+              } catch (error) {
+                console.error("Error retrieving shipping address:", error);
+              }
+              // Re-declare paymentMethod and finalPaymentId in fallback scope
+                const fallbackPaymentMethod = sessionId ? "stripe" : "razorpay";
+                const fallbackPaymentId = sessionId || paymentId;
+                await addDoc(tempOrdersCollection, {
+                  userId: currentUser?.id ?? '',
+                  paymentId: fallbackPaymentId,
+                  orderItems: cartProduct,
+                  paymentMethod: fallbackPaymentMethod,
+                  orderDate: new Date().toISOString(),
+                  totalAmount: cartProduct.reduce((sum: number, item) => sum + ((item.discountedPrice || item.regularPrice) * item.quantity), 0),
+                  shippingAddress: fallbackShippingAddress,
+                  userEmail: currentUser?.email || null,
+                  phoneNumber: currentUser?.phoneNumber || null,
+                  userName: `${currentUser?.firstName || ''} ${currentUser?.lastName || ''}`.trim(),
+                });
 
               console.log("Order saved to temporary collection");
               toast.success("Payment accepted! Your order has been saved.");
