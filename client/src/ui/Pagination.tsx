@@ -29,13 +29,7 @@ const Pagination = () => {
       const endpoint = `${config?.baseUrl}/products`;
       try {
         const data = await getData(endpoint);
-        // Exclude kitchen-only products from homepage
-        const filtered = Array.isArray(data)
-          ? data.filter((product: ProductProps) =>
-              !product.isKitchenOnly && product.pageType !== "kitchen"
-            )
-          : [];
-        setProducts(filtered);
+        setProducts(data);
       } catch (error) {
         console.error("Error fetching data", error);
       }

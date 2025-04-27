@@ -11,52 +11,97 @@ const Success = () => {
   const { currentUser, cartProduct, resetCart } = store();
   const location = useLocation();
   const sessionId = new URLSearchParams(location.search).get("session_id");
+  const paymentId = new URLSearchParams(location.search).get("payment_id");
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    if (!sessionId) {
+    if (!sessionId && !paymentId) {
       navigate("/");
     } else if (cartProduct.length > 0) {
       const saveOrder = async () => {
         try {
           setLoading(true);
-          const orderRef = doc(db, "orders", currentUser?.email!);
+          console.log("Attempting to save order...");
+          console.log("Current user:", currentUser);
+
+          // Wait for user data to be available if it's not yet loaded
+          if (!currentUser?.id) {
+            console.log("User ID not found, waiting for user data to load...");
+            // Wait a bit and check again - the user might still be loading
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            // If still no user ID, show a more user-friendly error
+            if (!currentUser?.id) {
+              throw new Error("Unable to save your order. Please try again or contact support.");
+            }
+          }
+
+          const orderRef = doc(db, "orders", currentUser.id);
           const docSnap = await getDoc(orderRef);
+
+          // Determine payment method and ID
+          const paymentMethod = sessionId ? "stripe" : "razorpay";
+          const finalPaymentId = sessionId || paymentId;
+
+          console.log("Payment method:", paymentMethod);
+          console.log("Payment ID:", finalPaymentId);
+          console.log("Cart products:", cartProduct.length);
+          console.log("Saving order for user ID:", currentUser.id);
+
+          // Try to get shipping address from localStorage
+          let shippingAddress = null;
+          try {
+            const savedAddress = localStorage.getItem('lastShippingAddress');
+            if (savedAddress) {
+              shippingAddress = JSON.parse(savedAddress);
+            }
+          } catch (error) {
+            console.error("Error retrieving shipping address:", error);
+          }
+
+          const orderData = {
+            userEmail: currentUser?.email || null,
+            phoneNumber: currentUser?.phoneNumber || null,
+            userName: `${currentUser?.firstName || ''} ${currentUser?.lastName || ''}`.trim(),
+            paymentId: finalPaymentId,
+            orderItems: cartProduct,
+            paymentMethod: paymentMethod,
+            userId: currentUser.id,
+            orderDate: new Date().toISOString(),
+            totalAmount: cartProduct.reduce((sum, item) => sum + ((item.discountedPrice || item.regularPrice) * item.quantity), 0),
+            shippingAddress: shippingAddress,
+            shippingCost: 25,
+            taxAmount: 15
+          };
+
           if (docSnap.exists()) {
+            console.log("Updating existing order document");
             // Document exists, update the orderItems array
             await updateDoc(orderRef, {
-              orders: arrayUnion({
-                userEmail: currentUser?.email,
-                paymentId: sessionId,
-                orderItems: cartProduct,
-                paymentMethod: "stripe",
-                userId: currentUser?.id,
-              }),
+              orders: arrayUnion(orderData),
             });
           } else {
+            console.log("Creating new order document");
             // Document doesn't exist, create a new one
             await setDoc(orderRef, {
-              orders: [
-                {
-                  userEmail: currentUser?.email,
-                  paymentId: sessionId,
-                  orderItems: cartProduct,
-                  paymentMethod: "stripe",
-                },
-              ],
+              orders: [orderData],
             });
           }
+
+          console.log("Order saved successfully");
           toast.success("Payment accepted successfully & order saved!");
           resetCart();
-        } catch (error) {
-          toast.error("Error saving order data");
+        } catch (error: any) {
+          console.error("Error saving order data:", error);
+          toast.error(`Error saving order data: ${error.message || "Unknown error"}`);
         } finally {
           setLoading(false);
         }
       };
       saveOrder();
     }
-  }, [sessionId, navigate, currentUser, cartProduct]);
+  }, [sessionId, paymentId, navigate, currentUser, cartProduct, resetCart]);
 
   return (
     <Container>

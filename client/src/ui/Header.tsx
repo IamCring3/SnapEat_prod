@@ -171,16 +171,16 @@ const Header = () => {
             </Menu>
             <nav className="flex items-center gap-12">
               {bottomNavigation.map(({ title, link }) => {
-                const isActive = location.pathname === link || 
+                const isActive = location.pathname === link ||
                   (link !== "/" && location.pathname.startsWith(link));
-                
+
                 return (
                   <Link
                     to={link}
                     key={title}
                     className={`text-sm font-medium transform transition-all duration-450 ease-in hover:scale-105 rounded-full ${
-                      isActive 
-                        ? "bg-primary text-white px-4 py-2 rounded-full shadow-sm hover:shadow-md hover:bg-primary/90" 
+                      isActive
+                        ? "bg-primary text-white px-4 py-2 rounded-full shadow-sm hover:shadow-md hover:bg-primary/90"
                         : "text-gray-600 hover:text-primary"
                     }`}
                   >

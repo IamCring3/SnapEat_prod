@@ -22,22 +22,35 @@ const Orders = () => {
     const getData = async () => {
       setLoading(true);
       try {
-        const docRef = doc(db, "orders", currentUser?.email!);
+        // Make sure we have a user ID
+        if (!currentUser?.id) {
+          console.log("No user ID available");
+          setLoading(false);
+          return;
+        }
+
+        console.log("Fetching orders for user ID:", currentUser.id);
+        const docRef = doc(db, "orders", currentUser.id);
         const docSnap = await getDoc(docRef);
+
         if (docSnap.exists()) {
           const orderData = docSnap?.data()?.orders;
+          console.log("Orders found:", orderData?.length || 0);
           setOrders(orderData);
         } else {
-          console.log("No orders yet!");
+          console.log("No orders document found for this user");
         }
       } catch (error) {
-        console.log("Data fetching error", error);
+        console.error("Error fetching orders:", error);
       } finally {
         setLoading(false);
       }
     };
-    getData();
-  }, []);
+
+    if (currentUser) {
+      getData();
+    }
+  }, [currentUser]);
   return (
     <Container>
       {loading ? (
@@ -56,7 +69,7 @@ const Orders = () => {
             <span className="text-black font-semibold">{orders?.length}</span>
           </p>
           <p className="text-sm max-w-[600px] tracking-wide text-gray-500">
-            
+
           </p>
           <div className="flex flex-col gap-3">
             <div className="space-y-6 divide-y divide-gray-900/10">
@@ -100,7 +113,7 @@ const Orders = () => {
                               <p className="text-gray-600">
                                 Payment Status:{" "}
                                 <span className="text-black font-medium">
-                                  Paid by Stripe
+                                  Paid by {order?.paymentMethod === 'razorpay' ? 'Razorpay' : 'Stripe'}
                                 </span>
                               </p>
                               <p className="text-gray-600">
@@ -109,6 +122,22 @@ const Orders = () => {
                                   <FormattedPrice amount={totalAmt} />
                                 </span>
                               </p>
+
+                              {order?.shippingAddress && (
+                                <div className="mt-2">
+                                  <p className="text-gray-600 font-medium">Shipping Address:</p>
+                                  <p className="text-sm text-gray-700">{order.shippingAddress.fullName}</p>
+                                  <p className="text-sm text-gray-700">{order.shippingAddress.addressLine1}</p>
+                                  {order.shippingAddress.addressLine2 && (
+                                    <p className="text-sm text-gray-700">{order.shippingAddress.addressLine2}</p>
+                                  )}
+                                  <p className="text-sm text-gray-700">
+                                    {order.shippingAddress.city}, {order.shippingAddress.state} {order.shippingAddress.postalCode}
+                                  </p>
+                                  <p className="text-sm text-gray-700">{order.shippingAddress.country}</p>
+                                  <p className="text-sm text-gray-700">{order.shippingAddress.phoneNumber}</p>
+                                </div>
+                              )}
                             </div>
                             {order?.orderItems?.map((item: ProductProps) => (
                               <div
