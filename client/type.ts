@@ -27,11 +27,11 @@ export interface ProductProps {
   name: string;
   isStock: boolean;
   isNew: boolean;
-  images: [string];
+  images: string[];
   discountedPrice: number;
   regularPrice: number;
   description: string;
-  colors: [string];
+  colors: string[];
   category: string;
   brand: string;
   pageType?: string;
@@ -69,7 +69,7 @@ export interface UserTypes {
 }
 
 export interface OrderTypes {
-  orderItems: [ProductProps];
+  orderItems: ProductProps[];
   paymentId: string;
   paymentMethod: string;
   userEmail?: string;

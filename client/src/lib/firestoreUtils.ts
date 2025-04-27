@@ -6,10 +6,10 @@ import {
   setDoc, 
   deleteDoc, 
   query, 
-  where, 
-  orderBy, 
-  limit,
-  DocumentData,
+ 
+ 
+
+
   QueryConstraint
 } from "firebase/firestore";
 import { db, storage } from "./firebase";

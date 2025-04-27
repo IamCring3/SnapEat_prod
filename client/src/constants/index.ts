@@ -1,6 +1,7 @@
 // Constants for the client application
 
 const cat = {
+  colors: [],
   oralCare: "oralCare",
   babyCare: "babyCare",
   beverages: "beverages",
@@ -15,6 +16,7 @@ const cat = {
 
 export const categories = [
   {
+  colors: [],
     _id: 1001,
     name: "Oral Care",
     image: "https://i.ibb.co/kM0FR2h/cat-Tv-Audio.webp",
@@ -23,6 +25,7 @@ export const categories = [
     _base: "oralCare",
   },
   {
+  colors: [],
     _id: 1002,
     name: "Baby Care",
     image: "https://i.ibb.co/71hR65V/catTvBox.webp",
@@ -31,6 +34,7 @@ export const categories = [
     _base: "babyCare",
   },
   {
+  colors: [],
     _id: 1003,
     name: "Beverages",
     image: "https://i.ibb.co/0V0g6Gz/cat-Powertool.webp",
@@ -39,6 +43,7 @@ export const categories = [
     _base: "beverages",
   },
   {
+  colors: [],
     _id: 1004,
     name: "Cleaning & Disinfectant",
     image: "https://i.ibb.co/zST2Xdp/cat-Headphone.webp",
@@ -47,6 +52,7 @@ export const categories = [
     _base: "cleaningDisinfectant",
   },
   {
+  colors: [],
     _id: 1005,
     name: "Hair Care",
     image: "https://i.ibb.co/jgk59BL/catPhone.webp",
@@ -55,6 +61,7 @@ export const categories = [
     _base: "hairCare",
   },
   {
+  colors: [],
     _id: 1006,
     name: "Home Care",
     image: "https://i.ibb.co/B4NKfBZ/cat-Smart-Watch.webp",
@@ -64,6 +71,7 @@ export const categories = [
   },
 
   {
+  colors: [],
     _id: 1008,
     name: "Personal Care",
     image: "https://i.ibb.co/xjpdQrr/cat-Robot-Clean.webp",
@@ -72,6 +80,7 @@ export const categories = [
     _base: "personalCare",
   },
   {
+  colors: [],
     _id: 1009,
     name: "Skin Care",
     image: "https://i.ibb.co/HdNVLzh/cat-Sport-Watch.webp",
@@ -80,6 +89,7 @@ export const categories = [
     _base: "skinCare",
   },
   {
+  colors: [],
     _id: 1010,
     name: "Stationary",
     image: "https://i.ibb.co/qCzTx4F/cat-Tablet.webp",
@@ -89,6 +99,7 @@ export const categories = [
   },
 
   {
+  colors: [],
     _id: 1013,
     name: "Kitchen & Food",
     image: "https://i.ibb.co/Kj8wXMz/food-category.jpg",
@@ -100,6 +111,7 @@ export const categories = [
 
 export const highlightsProducts = [
   {
+  colors: [],
     _id: 3001,
     name: "Pet Supplies",
     title: "food, treats, toys, and more",
@@ -109,6 +121,7 @@ export const highlightsProducts = [
     color: "#000000",
   },
   {
+  colors: [],
     _id: 3002,
     name: "Baby Care",
     title: "Get baby care essentials in minutes",
@@ -118,6 +131,7 @@ export const highlightsProducts = [
     color: "#000000",
   },
   {
+  colors: [],
     _id: 3003,
     name: "Pharmacy at your doorstep",
     title: "cough syrup, pain relief sprays, and more",
@@ -131,6 +145,7 @@ export const highlightsProducts = [
 export const products = [
   // --- CSV IMPORTED PRODUCTS START ---
   {
+  colors: [],
     _id: 2100,
     name: "Lizol - Citrus",
     images: ["https://griepit.in/wp-content/uploads/2025/03/61W8NHxqS8L._SX679_.jpg"],
@@ -149,6 +164,7 @@ export const products = [
     pageType: "cleaning"
   },
   {
+  colors: [],
     _id: 2101,
     name: "Lizol Disinfectant Surface Cleaner - Floral",
     images: ["https://i.ibb.co/Fq3LHjk7/Lizol-Disinfectant-Surface-Cleaner-Floral.jpg"],
@@ -167,6 +183,7 @@ export const products = [
     pageType: "cleaning"
   },
   {
+  colors: [],
     _id: 2102,
     name: "Harpic",
     images: ["https://i.ibb.co/27PkMcLL/Harpic.jpg"],
@@ -185,6 +202,7 @@ export const products = [
     pageType: "cleaning"
   },
   {
+  colors: [],
     _id: 2103,
     name: "Robin - Fabric Whiteness",
     images: ["https://i.ibb.co/kVJJk5wB/Robin-Fabric-Whiteness.jpg"],
@@ -203,6 +221,7 @@ export const products = [
     pageType: "cleaning"
   },
   {
+  colors: [],
     _id: 2104,
     name: "Patanjali Super Dishwash Bar",
     images: ["https://i.ibb.co/PGgV1zK3/Patanjali-Super-Dishwash-Bar.webp"],
@@ -221,6 +240,7 @@ export const products = [
     pageType: "cleaning"
   },
   {
+  colors: [],
     _id: 2105,
     name: "Odopic Dishwash Bar",
     images: ["https://i.ibb.co/WvSt4cjj/Odopic-Dishwash-Bar.webp"],
@@ -239,6 +259,7 @@ export const products = [
     pageType: "cleaning"
   },
   {
+  colors: [],
     _id: 2106,
     name: "Tide Washing Powder - Jasmine & Rose",
     images: ["https://i.ibb.co/RTygC3B4/Tide-Washing-Powder-Jasmine-Rose.webp"],
@@ -258,6 +279,7 @@ export const products = [
   },
   // --- CSV IMPORTED PRODUCTS END ---
   {
+  colors: [],
     _id: 2107,
     name: "Dettol Liquid Hand Wash",
     images: ["https://i.ibb.co/pjZ62sjw/Dettol-Liquid-Hand-Wash.webp"],
@@ -276,6 +298,7 @@ export const products = [
     pageType: "cleaning"
   },
   {
+  colors: [],
     _id: 2108,
     name: "Dettol Sensitive Liquid Hand Wash Refiller",
     images: ["https://i.ibb.co/1GtCkqR7/Dettol-Sensitive-Liquid-Hand-Wash-Refiller.webp"],
@@ -294,6 +317,7 @@ export const products = [
     pageType: "cleaning"
   },
   {
+  colors: [],
     _id: 2109,
     name: "Colin Glass Cleaner",
     images: ["https://i.ibb.co/JwPy559f/Colin-Glass-Cleaner.webp"],
@@ -312,6 +336,7 @@ export const products = [
     pageType: "cleaning"
   },
   {
+  colors: [],
     _id: 2110,
     name: "Vivel Soap - Lime and Aloe Vera",
     images: ["https://i.ibb.co/TDTR8X2c/Vivel-Soap-Lime-and-Aloe-Vera.jpg"],
@@ -331,6 +356,7 @@ export const products = [
   },
   // Add more products as needed
   {
+  colors: [],
     _id: 2026,
     name: "Pork Fried Rice",
     images: [
@@ -353,6 +379,7 @@ export const products = [
     pageType: "kitchen"
   },
   {
+  colors: [],
     _id: 2027,
     name: "Chicken Fried Rice",
     images: [

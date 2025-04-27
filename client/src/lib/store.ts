@@ -4,18 +4,7 @@ import { persist } from "zustand/middleware";
 import { db } from "./firebase";
 import { ProductProps, UserTypes } from "../../type";
 
-interface CartProduct extends ProductProps {
-  quantity: number;
-}
 
-interface UserType {
-  firstName: string;
-  lastName: string;
-  password: string;
-  email: string;
-  avatar: string;
-  id: string;
-}
 
 interface StoreType {
   // user
@@ -102,18 +91,18 @@ export const store = create<StoreType>()(
       },
       decreaseQuantity: (id) => {
         set((state) => ({
-          cartProduct: state.cartProduct.map((item) =>
-            item._id === id ? { ...item, quantity: item.quantity - 1 } : item
+          cartProduct: state.cartProduct.map((item: ProductProps) =>
+            item._id === Number(id) ? { ...item, quantity: item.quantity - 1 } : item
           ),
         }));
       },
       removeFromCart: (id) => {
         set((state) => ({
-          cartProduct: state.cartProduct.filter((item) => item._id !== id),
+          cartProduct: state.cartProduct.filter((item: ProductProps) => item._id !== Number(id)),
         }));
       },
       resetCart: () => {
-        set((state) => ({
+        set(() => ({
           cartProduct: [],
         }));
       },
@@ -124,7 +113,7 @@ export const store = create<StoreType>()(
       },
       removeFromFavorite: (id) => {
         set((state) => ({
-          favoriteProduct: state.favoriteProduct.filter((item) => item._id !== id),
+          favoriteProduct: state.favoriteProduct.filter((item: ProductProps) => item._id !== Number(id)),
         }));
       },
       addToCompare: (product) => {
@@ -134,11 +123,11 @@ export const store = create<StoreType>()(
       },
       removeFromCompare: (id) => {
         set((state) => ({
-          compareProducts: state.compareProducts.filter((item) => item._id !== id),
+          compareProducts: state.compareProducts.filter((item: ProductProps) => item._id !== Number(id)),
         }));
       },
       clearCompare: () => {
-        set((state) => ({
+        set(() => ({
           compareProducts: [],
         }));
       },

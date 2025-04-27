@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs, doc, setDoc, deleteDoc, query, where } from "firebase/firestore";
+import { collection, getDocs, doc, setDoc, deleteDoc } from "firebase/firestore";
 import { db, storage } from "../lib/firebase";
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
 import { ProductProps } from "../../type";
@@ -67,7 +67,10 @@ const AdminProducts = () => {
       } else {
         // Use fallback data if Firestore is empty
         console.log("No products found in Firestore, using fallback data");
-        productsData = fallbackProducts;
+        productsData = fallbackProducts.map(product => ({
+  ...product,
+  colors: product.colors || [],
+}));
 
         // Save fallback data to Firestore
         for (const product of fallbackProducts) {
@@ -85,7 +88,7 @@ const AdminProducts = () => {
       toast.error("Failed to load products");
 
       // Use fallback data if there's an error
-      setProducts(fallbackProducts);
+      setProducts(fallbackProducts.map(product => ({ ...product, colors: product.colors || [] })));
     } finally {
       setLoading(false);
     }

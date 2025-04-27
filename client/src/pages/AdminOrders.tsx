@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs, query, where, collectionGroup } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../lib/firebase";
 import Loading from "../ui/Loading";
 import { FaEye, FaPhone, FaUser, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
