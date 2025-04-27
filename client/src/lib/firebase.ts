@@ -8,15 +8,14 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDUn4hyFh0B7Dc9xr11rSG-N8hDFKg1TvU",
-  authDomain: "snapeat-b583a.firebaseapp.com",
-  projectId: "snapeat-b583a",
-  storageBucket: "snapeat-b583a.firebasestorage.app",
-  messagingSenderId: "378794431847",
-  appId: "1:378794431847:web:bc48380ee36b17635e8bc2",
-  measurementId: "G-JHSFB9Z5HM"
+  apiKey: "AIzaSyBzwVTCkbbzY7disGMLqzwN9_r5znNLzNM",
+  authDomain: "snapeat-2288d.firebaseapp.com",
+  projectId: "snapeat-2288d",
+  storageBucket: "snapeat-2288d.firebasestorage.app",
+  messagingSenderId: "567797575571",
+  appId: "1:567797575571:web:b44e2b034dc0a7fd510266",
+  measurementId: "G-C3YVWELGN6"
 };
-
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();

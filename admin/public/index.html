@@ -7,10 +7,8 @@
     <title>SuperGear Admin Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Add custom styles -->
     <style>
       body {
@@ -48,6 +46,46 @@
   </head>
   <body>
     <div class="container">
+        <!-- Sidebar will be conditionally rendered by JS. -->
+        <!-- Main Content -->
+        <main class="content">
+            <header>
+                <h1>Dashboard</h1>
+            </header>
+            <div id="dashboard-content" class="dashboard-grid">
+                <!-- Dashboard emptied as requested -->
+                <!-- Top Categories Chart -->
+                <div class="chart-card" id="top-categories">
+                    <h3>Top Categories</h3>
+                    <canvas id="categories-chart" height="120"></canvas>
+                </div>
+                <!-- Active Users Table -->
+                <div class="table-card" id="active-users">
+                    <h3>Active Users</h3>
+                    <table>
+                        <thead><tr><th>Country</th><th>Users</th><th>Percent</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <!-- Conversion Rate Chart -->
+                <div class="chart-card" id="conversion-rate">
+                    <h3>Conversion Rate</h3>
+                    <canvas id="conversion-chart" height="120"></canvas>
+                </div>
+                <!-- Traffic Sources Table -->
+                <div class="table-card" id="traffic-sources">
+                    <h3>Traffic Sources</h3>
+                    <table>
+                        <thead><tr><th>Source</th><th>Percent</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+    <div class="container">
         <nav class="sidebar">
             <div class="logo">
                 <h2>SuperGear Admin</h2>
@@ -79,6 +117,9 @@
                 </div>
                 <div class="user-info">
                     <span class="material-icons">notifications</span>
+                    <button id="dark-mode-toggle" title="Toggle dark mode" class="dark-toggle">
+                        <span class="material-icons">dark_mode</span>
+                    </button>
                     <div class="admin-profile">
                         <span class="material-icons">account_circle</span>
                         <span>Admin</span>
@@ -86,82 +127,10 @@
                 </div>
             </header>
             <div id="dashboard-content" class="page active">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <h3>Total Orders</h3>
-                        <p class="stat-number" id="total-orders">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Total Revenue</h3>
-                        <p class="stat-number" id="total-revenue">$0</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Active Users</h3>
-                        <p class="stat-number" id="active-users">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>Products</h3>
-                        <p class="stat-number" id="total-products">0</p>
-                    </div>
-                </div>
-                <div class="charts-container">
-                    <div class="chart-card">
-                        <h3>Recent Orders</h3>
-                        <table id="recent-orders">
-                            <thead>
-                                <tr>
-                                    <th>Order ID</th>
-                                    <th>Customer</th>
-                                    <th>Amount</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div id="orders-content" class="page">
-                <h2>Orders Management</h2>
-                <div class="orders-list">
-                    <table id="orders-table">
-                        <thead>
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Customer</th>
-                                <th>Date</th>
-                                <th>Amount</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-            </div>
-            <div id="products-content" class="page">
-                <h2>Products Management</h2>
-                <button id="add-product" class="btn-primary">Add New Product</button>
-                <div class="products-grid" id="products-grid"></div>
-            </div>
-            <div id="users-content" class="page">
-                <h2>Users Management</h2>
-                <div class="users-list">
-                    <table id="users-table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Joined Date</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-            </div>
+                <!-- Dashboard emptied as requested -->
+            <!-- Orders Management section removed -->
+            <!-- Products Management section removed -->
+            <!-- Users Management section removed -->
         </main>
     </div>
     <script src="app.js"></script>

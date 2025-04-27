@@ -43,19 +43,21 @@ const CategoryFilters = ({ id }: { id: string | undefined }) => {
               />
             </div>
           ) : (
-            categories?.map((item: CategoryProps) => (
-              <Link
-                to={`/category/${item?._base}`}
-                key={item?._id}
-                className={`text-base font-medium text-start underline underline-offset-2 decoration-[1px] decoration-transparent hover:decoration-gray-950 hover:text-black duration-200 ${
-                  item?._base === id
-                    ? "text-greenText decoration-greenText"
-                    : "text-lightText"
-                }`}
-              >
-                {item?.name}
-              </Link>
-            ))
+            categories
+              ?.filter((item: CategoryProps) => item._base !== 'kitchen' && item._base !== 'food')
+              .map((item: CategoryProps) => (
+                <Link
+                  to={`/category/${item?._base}`}
+                  key={item?._id}
+                  className={`text-base font-medium text-start underline underline-offset-2 decoration-[1px] decoration-transparent hover:decoration-gray-950 hover:text-black duration-200 ${
+                    item?._base === id
+                      ? "text-greenText decoration-greenText"
+                      : "text-lightText"
+                  }`}
+                >
+                  {item?.name}
+                </Link>
+              ))
           )}
         </div>
       </div>

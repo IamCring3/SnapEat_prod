@@ -56,10 +56,7 @@ const Orders = () => {
             <span className="text-black font-semibold">{orders?.length}</span>
           </p>
           <p className="text-sm max-w-[600px] tracking-wide text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-            porro, nemo quisquam explicabo, mollitia inventore nobis id maiores
-            odio incidunt quidem rerum delectus quaerat similique voluptates
-            dolores perferendis numquam quae.
+            
           </p>
           <div className="flex flex-col gap-3">
             <div className="space-y-6 divide-y divide-gray-900/10">
@@ -198,7 +195,7 @@ const Orders = () => {
           <p>You did not create any purchase from us</p>
           <Link
             to={"/product"}
-            className="mt-2 bg-gray-800 text-gray-100 px-6 py-2 rounded-md hover:bg-black hover:text-white duration-200"
+            className="mt-2 bg-red-600 text-gray-200 px-8 py-4 rounded-md border-2 border-transparent hover:bg-white hover:text-red-600 hover:border-2 hover:border-red-600 duration-200 uppercase text-sm font-semibold tracking-wide"
           >
             Go to Shopping
           </Link>

@@ -807,8 +807,8 @@ export const products = [
     _id: 2026,
     name: "Pork Fried Rice",
     images: [
-      "https://i.ibb.co/x6FLpM4/pork-fried-rice.jpg",
-      "https://i.ibb.co/x6FLpM4/pork-fried-rice.jpg"
+      "/assets/Kitchen/Pork Fried Rice.jpg",
+      
     ],
     description: "Delicious pork fried rice made with fresh ingredients and authentic spices.",
     regularPrice: 190,
@@ -1093,8 +1093,8 @@ export const products = [
     _id: 2039,
     name: "Chicken Wings Hot/Spicy",
     images: [
-      "https://i.ibb.co/Kj8wXMz/chicken-wings.jpg",
-      "https://i.ibb.co/Kj8wXMz/chicken-wings.jpg"
+      "https://drive.google.com/file/d/1FJyYMZQlsawORG8tDASMZoQG4p69SrKe/view?usp=drive_link"
+      
     ],
     description: "Crispy and spicy chicken wings with special hot sauce.",
     regularPrice: 220,
@@ -1115,10 +1115,10 @@ export const products = [
     _id: 2040,
     name: "Chicken Gizzard Dry/Fry/Gravy",
     images: [
-      "https://i.ibb.co/YhK0nJt/chicken-gizzard.jpg",
-      "https://i.ibb.co/YhK0nJt/chicken-gizzard.jpg"
+      "https://drive.google.com/file/d/1mw5dTm8QB06O0xpCsLfsVsXXOzAaHYbN/view?usp=drive_link"
     ],
     description: "Flavorful chicken gizzard prepared in your choice of style - dry, fried, or with gravy.",
+    options: ["Dry", "Fry", "Gravy"],
     regularPrice: 250,
     discountedPrice: 250,
     quantity: 1,

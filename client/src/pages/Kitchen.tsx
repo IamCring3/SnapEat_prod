@@ -213,7 +213,6 @@ const Kitchen = () => {
             </div>
           ) : (
             <div className="flex items-start gap-10">
-              <CategoryFilters id={id} />
               <div>
                 <p className="text-4xl font-semibold mb-5 text-center">
                   Kitchen Collection

@@ -22,6 +22,7 @@ const Product = () => {
   const [loading, setLoading] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
   const [color, setColor] = useState("");
+  const [selectedOption, setSelectedOption] = useState<string>("");
   const { id } = useParams();
 
   const endpoint = id
@@ -102,25 +103,28 @@ const Product = () => {
                     <p className="text-base font-semibold">{`(${productData?.reviews} reviews)`}</p>
                   </div>
                 </div>
-                <p className="flex items-center">
-                  <FaRegEye className="mr-1" />{" "}
-                  <span className="font-semibold mr-1">
-                    {productData?.reviews}
-                  </span>{" "}
-                  peoples are viewing this right now
-                </p>
-                <p>
-                  You are saving{" "}
-                  <span className="text-base font-semibold text-green-500">
-                    <FormattedPrice
-                      amount={
-                        productData?.regularPrice! -
-                        productData?.discountedPrice!
-                      }
-                    />
-                  </span>{" "}
-                  upon purchase
-                </p>
+
+
+                {/* Option selection for Dry/Fry/Gravy */}
+                {productData?.options && Array.isArray(productData.options) && (
+                  <div className="mb-4">
+                    <p className="font-semibold mb-1">Choose Style:</p>
+                    <div className="flex gap-3">
+                      {productData.options.map((option: string) => (
+                        <label key={option} className="flex items-center gap-1 cursor-pointer">
+                          <input
+                            type="radio"
+                            name="gizzard-style"
+                            value={option}
+                            checked={selectedOption === option}
+                            onChange={() => setSelectedOption(option)}
+                          />
+                          <span>{option}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 <div>
                   {color && (
                     <p>

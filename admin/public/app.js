@@ -12,6 +12,16 @@ navItems.forEach(item => {
     item.addEventListener('click', () => {
         const targetPage = item.dataset.page;
         
+        // Sidebar logic
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar) {
+            if (targetPage === 'kitchen') {
+                sidebar.style.display = 'none';
+            } else {
+                sidebar.style.display = '';
+            }
+        }
+        
         // Update active states
         navItems.forEach(nav => nav.classList.remove('active'));
         pages.forEach(page => page.classList.remove('active'));
@@ -374,5 +384,185 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Initialize dashboard
-loadPageData('dashboard'); 
+// Dark mode toggle functionality
+const darkToggle = document.getElementById('dark-mode-toggle');
+const prefersDark = localStorage.getItem('dashboard-dark-mode') === 'true';
+if (prefersDark) document.body.classList.add('dark-mode');
+
+darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('dashboard-dark-mode', document.body.classList.contains('dark-mode'));
+});
+
+// DASHBOARD FUNCTIONALITY
+window.addEventListener('DOMContentLoaded', () => {
+    renderDashboard();
+});
+
+function renderDashboard() {
+    // --- Stat Cards ---
+    document.getElementById('total-sales').textContent = '$983,410';
+    document.getElementById('sales-change').textContent = '+3.36% vs last week';
+    document.getElementById('total-orders').textContent = '58,375';
+    document.getElementById('orders-change').textContent = '-2.89% vs last week';
+    document.getElementById('total-visitors').textContent = '237,782';
+    document.getElementById('visitors-change').textContent = '+1.02% vs last week';
+
+    // --- Revenue Analytics Chart ---
+    const revenueChart = document.getElementById('revenue-chart').getContext('2d');
+    new Chart(revenueChart, {
+        type: 'line',
+        data: {
+            labels: ['12 Aug', '13 Aug', '14 Aug', '15 Aug', '16 Aug', '17 Aug', '18 Aug'],
+            datasets: [
+                {
+                    label: 'Revenue',
+                    data: [8000, 12000, 14521, 10000, 16000, 14000, 13000],
+                    borderColor: '#f59e0b',
+                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                    tension: 0.4,
+                    pointRadius: 0,
+                    fill: true
+                },
+                {
+                    label: 'Orders',
+                    data: [6000, 9000, 12000, 9000, 14000, 12000, 11000],
+                    borderColor: '#6366f1',
+                    backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                    tension: 0.4,
+                    pointRadius: 0,
+                    fill: true
+                }
+            ]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { display: false } },
+                y: { grid: { color: '#e5e7eb' } }
+            }
+        }
+    });
+
+    // --- Monthly Target Progress ---
+    renderProgressCircle('target-progress', 85, '#4f46e5');
+    document.getElementById('target-amount').textContent = '$600,000';
+    document.getElementById('revenue-amount').textContent = '$510,000';
+
+    // --- Top Categories Chart ---
+    const categoriesChart = document.getElementById('categories-chart').getContext('2d');
+    new Chart(categoriesChart, {
+        type: 'doughnut',
+        data: {
+            labels: ['Electronics', 'Fashion', 'Home & Kitchen', 'Beauty & Personal Care'],
+            datasets: [{
+                label: 'Total Sales',
+                data: [1200000, 950000, 750000, 500000],
+                backgroundColor: ['#f59e0b', '#6366f1', '#22c55e', '#ef4444'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            cutout: '75%',
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    // --- Active Users Table ---
+    const usersTable = document.querySelector('#active-users tbody');
+    usersTable.innerHTML = `
+        <tr><td>United States</td><td>1,000</td><td>36%</td></tr>
+        <tr><td>United Kingdom</td><td>700</td><td>24%</td></tr>
+        <tr><td>Indonesia</td><td>500</td><td>17.5%</td></tr>
+        <tr><td>Russia</td><td>300</td><td>15%</td></tr>
+    `;
+
+    // --- Conversion Rate Chart ---
+    const conversionChart = document.getElementById('conversion-chart').getContext('2d');
+    new Chart(conversionChart, {
+        type: 'bar',
+        data: {
+            labels: ['Product Views', 'Add to Cart', 'Proceeded to Checkout', 'Completed Purchases', 'Abandoned Carts'],
+            datasets: [{
+                label: 'This Week',
+                data: [25000, 12000, 8500, 6200, 3000],
+                backgroundColor: [
+                    '#4f46e5', '#6366f1', '#22c55e', '#f59e0b', '#ef4444'
+                ],
+                borderRadius: 8
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { display: false } },
+                y: { grid: { color: '#e5e7eb' } }
+            }
+        }
+    });
+
+    // --- Traffic Sources Table ---
+    const trafficTable = document.querySelector('#traffic-sources tbody');
+    trafficTable.innerHTML = `
+        <tr><td>Direct Traffic</td><td>40%</td></tr>
+        <tr><td>Organic Search</td><td>35%</td></tr>
+        <tr><td>Social Media</td><td>15%</td></tr>
+        <tr><td>Referral Traffic</td><td>10%</td></tr>
+        <tr><td>Email Campaigns</td><td>5%</td></tr>
+    `;
+}
+
+// Progress Circle Renderer
+function renderProgressCircle(id, percent, color) {
+    const el = document.getElementById(id);
+    const size = 80;
+    const stroke = 8;
+    const radius = (size - stroke) / 2;
+    const circ = 2 * Math.PI * radius;
+    const offset = circ * (1 - percent / 100);
+    el.innerHTML = `
+        <svg width="${size}" height="${size}">
+            <circle cx="${size/2}" cy="${size/2}" r="${radius}" stroke="#e5e7eb" stroke-width="${stroke}" fill="none"/>
+            <circle cx="${size/2}" cy="${size/2}" r="${radius}" stroke="${color}" stroke-width="${stroke}" fill="none" stroke-dasharray="${circ}" stroke-dashoffset="${offset}" stroke-linecap="round"/>
+            <text x="50%" y="54%" text-anchor="middle" fill="#222" font-size="1.1rem" font-weight="bold" dy=".3em">${percent}%</text>
+        </svg>
+    `;
+}
+
+// Chart.js sample chart in dashboard
+function initDashboardChart() {
+    const dashboardContent = document.getElementById('dashboard-content');
+    if (!document.getElementById('dashboard-bar-chart')) {
+        const chartCard = document.createElement('div');
+        chartCard.className = 'chart-card';
+        chartCard.innerHTML = '<h3>Orders Overview</h3><canvas id="dashboard-bar-chart" height="120"></canvas>';
+        dashboardContent.appendChild(chartCard);
+    }
+    const ctx = document.getElementById('dashboard-bar-chart');
+    if (ctx && !ctx.chartInstance) {
+        ctx.chartInstance = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Orders',
+                    data: [12, 19, 8, 17, 14, 21],
+                    backgroundColor: '#6366f1',
+                    borderRadius: 8,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { grid: { color: '#e5e7eb' } }
+                }
+            }
+        });
+    }
+}
+// Add chart after dashboard loads
+setTimeout(initDashboardChart, 800);

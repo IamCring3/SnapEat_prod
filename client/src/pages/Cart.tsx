@@ -78,16 +78,18 @@ const Cart = () => {
                     <FormattedPrice amount={taxAmt} />
                   </dd>
                 </div>
-                <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-                  <dt className="text-base font-medium text-gray-900">
-                    Total Discount
-                  </dt>
-                  <dd className="text-base font-medium text-gray-500">
-                    <FormattedPrice
-                      amount={totalAmt?.regular - totalAmt?.discounted}
-                    />
-                  </dd>
-                </div>
+                {Number((totalAmt?.regular - totalAmt?.discounted).toFixed(2)) > 0 && (
+                  <div className="flex items-center justify-between border-t border-gray-200 pt-4">
+                    <dt className="text-base font-medium text-gray-900">
+                      Total Discount
+                    </dt>
+                    <dd className="text-base font-medium text-gray-500">
+                      <FormattedPrice
+                        amount={totalAmt?.regular - totalAmt?.discounted}
+                      />
+                    </dd>
+                  </div>
+                )}
                 <div className="flex items-center justify-between border-t border-gray-200 pt-4">
                   <dt className="text-base font-medium text-gray-900">
                     Order total
@@ -109,14 +111,11 @@ const Cart = () => {
             Shopping Cart
           </h1>
           <p className="text-lg max-w-[600px] text-center text-gray-600 tracking-wide leading-6">
-            Your cart is empty. Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Repellendus libero ab nulla iure quibusdam
-            obcaecati debitis minima explicabo quidem tenetur ad, voluptate
-            iusto ratione natus. Maxime molestiae doloremque eaque nesciunt!
+            Your cart is empty. 
           </p>
           <Link
             to={"/product"}
-            className="bg-gray-800 text-gray-200 px-8 py-4 rounded-md hover:bg-black hover:text-white duration-200 uppercase text-sm font-semibold tracking-wide"
+            className="bg-red-600 text-gray-200 px-8 py-4 rounded-md border-2 border-transparent hover:bg-white hover:text-red-600 hover:border-2 hover:border-red-600 duration-200 uppercase text-sm font-semibold tracking-wide"
           >
             go to shopping
           </Link>

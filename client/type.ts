@@ -17,6 +17,7 @@ export interface CategoryProps {
 }
 
 export interface ProductProps {
+  options?: string[];
   _id: number;
   _base: string;
   reviews: number;

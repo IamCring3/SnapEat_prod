@@ -19,12 +19,6 @@ export const categories = [
   },
   {
     _id: '4',
-    name: 'Food',
-    _base: 'food',
-    image: 'https://img.icons8.com/color/96/restaurant.png'
-  },
-  {
-    _id: '5',
     name: 'Hair Care',
     _base: 'hairCare',
     image: 'https://img.icons8.com/color/96/hair-care.png'
