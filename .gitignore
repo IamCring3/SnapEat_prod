@@ -28,7 +28,7 @@ yarn-debug.log*
 yarn-error.log*
 logs
 *.log
-
+  
 # Editor directories and files
 .idea
 .vscode
