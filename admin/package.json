@@ -10,7 +10,8 @@
   "scripts": {
     "start": "nodemon index.mjs",
     "create-admin": "node createAdminUser.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vercel-build": "echo \"No build step\""
   },
   "keywords": [],
   "author": "",
