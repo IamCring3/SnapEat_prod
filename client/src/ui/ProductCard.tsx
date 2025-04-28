@@ -18,13 +18,6 @@ const ProductCard = ({ item, setSearchText }: Props) => {
 
   return (
     <div className="bg-white rounded-lg p-4 hover:shadow-md duration-200 border border-gray-100">
-      {/* Delivery Time */}
-      <div className="flex items-center gap-1 mb-3">
-        <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <span className="text-xs text-gray-500">8 MINS</span>
-      </div>
 
       {/* Product Image */}
       <div className="relative group mb-3">
