@@ -14,21 +14,8 @@ import {
 } from "../assets";
 
 const DiscountedBanner = () => {
-  const popularSearchItems = [
-    { title: "Smart Watches", link: "smartWatches" },
-    { title: "Headphone", link: "headphones" },
-    { title: "Cameras", link: "camerasAndPhotos" },
-    { title: "Audio", link: "tvAndAudio" },
-    { title: "Laptop & Computers", link: "computersAndLaptop" },
-    { title: "Cell Phone", link: "cellPhones" },
-  ];
-  return (
-    <Container>
-      <div>
-        <Title text="Popular Search" />
-        <div className="w-full h-[1px] bg-gray-200 mt-3" />
-      </div>
-      <div className="my-7 flex items-center flex-wrap gap-4">
+  // Popular Search section removed
+  return null;
         {popularSearchItems?.map(({ title, link }) => (
           <Link
             key={title}
